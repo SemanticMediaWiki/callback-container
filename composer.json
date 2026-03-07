@@ -1,11 +1,11 @@
 {
-	"name": "onoi/callback-container",
+	"name": "mediawiki/callback-container",
 	"type": "library",
 	"description": "A very simple callback container/builder library",
 	"keywords": [
 		"container"
 	],
-	"homepage": "https://github.com/onoi/callback-container",
+	"homepage": "https://github.com/SemanticMediaWiki/callback-container",
 	"license": "GPL-2.0-or-later",
 	"authors": [
 		{
@@ -14,12 +14,12 @@
 		}
 	],
 	"require": {
-		"php": ">=5.5",
+		"php": ">=8.1"",
 		"psr/log": "~1.0"
 	},
 	"extra": {
 		"branch-alias": {
-			"dev-master": "2.x-dev"
+			"dev-master": "3.x-dev"
 		}
 	},
 	"autoload": {
