@@ -1,11 +1,9 @@
 # Callback container
 
-[![Build Status](https://secure.travis-ci.org/onoi/callback-container.svg?branch=master)](http://travis-ci.org/onoi/callback-container)
-[![Code Coverage](https://scrutinizer-ci.com/g/onoi/callback-container/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/onoi/callback-container/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/onoi/callback-container/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/onoi/callback-container/?branch=master)
-[![Latest Stable Version](https://poser.pugx.org/onoi/callback-container/version.png)](https://packagist.org/packages/onoi/callback-container)
-[![Packagist download count](https://poser.pugx.org/onoi/callback-container/d/total.png)](https://packagist.org/packages/onoi/callback-container)
-[![Dependency Status](https://www.versioneye.com/php/onoi:callback-container/badge.png)](https://www.versioneye.com/php/onoi:callback-container)
+[![CI](https://github.com/SemanticMediaWiki/callback-container/actions/workflows/ci.yml/badge.svg)](https://github.com/SemanticMediaWiki/callback-container/actions/workflows/ci.yml)
+![Latest Stable Version](https://img.shields.io/packagist/v/mediawiki/callback-container.svg)
+![Total Download Count](https://img.shields.io/packagist/dt/mediawiki/callback-container.svg)
+[![codecov](https://codecov.io/gh/SemanticMediaWiki/callback-container/graph/badge.svg?token=Si45N9MsGq)](https://codecov.io/gh/SemanticMediaWiki/callback-container)
 
 A simple object instantiator to lazy load registered callback handlers. Part of the
 code base has been extracted from [Semantic MediaWiki][smw] and is now being
@@ -24,7 +22,7 @@ the dependency to your [composer.json][composer].
 ```json
 {
 	"require": {
-		"onoi/callback-container": "~2.0"
+		"mediawiki/callback-container": "~3.0"
 	}
 }
 ```
@@ -53,8 +51,8 @@ If you want to contribute work to the project please subscribe to the
 developers mailing list and have a look at the [contribution guidelinee](/CONTRIBUTING.md). A list
 of people who have made contributions in the past can be found [here][contributors].
 
-* [File an issue](https://github.com/onoi/callback-container/issues)
-* [Submit a pull request](https://github.com/onoi/callback-container/pulls)
+* [File an issue](https://github.com/SemanticMediaWiki/callback-container/issues)
+* [Submit a pull request](https://github.com/SemanticMediaWiki/callback-container/pulls)
 
 ### Tests
 
@@ -85,7 +83,6 @@ The library provides unit tests that covers the core-functionality normally run 
 [GNU General Public License 2.0 or later][license].
 
 [composer]: https://getcomposer.org/
-[contributors]: https://github.com/onoi/callback-container/graphs/contributors
+[contributors]: https://github.com/SemanticMediaWiki/callback-container/graphs/contributors
 [license]: https://www.gnu.org/copyleft/gpl.html
-[travis]: https://travis-ci.org/onoi/callback-container
 [smw]: https://github.com/SemanticMediaWiki/SemanticMediaWiki/
