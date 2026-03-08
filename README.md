@@ -11,8 +11,7 @@ deployed as independent library.
 
 ## Requirements
 
-* PHP 5.5
-* HHVM 3.5 or later
+* PHP 8.1 or later
 
 ## Installation
 
