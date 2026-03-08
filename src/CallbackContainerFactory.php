@@ -17,7 +17,7 @@ class CallbackContainerFactory {
 	 *
 	 * @return CallbackContainerBuilder
 	 */
-	public function newCallbackContainerBuilder( CallbackContainer $callbackContainer = null ) {
+	public function newCallbackContainerBuilder( ?CallbackContainer $callbackContainer = null ) {
 		return new CallbackContainerBuilder( $callbackContainer );
 	}
 
@@ -37,7 +37,7 @@ class CallbackContainerFactory {
 	 *
 	 * @return ServicesManager
 	 */
-	public function newServicesManager( ContainerBuilder $containerBuilder = null ) {
+	public function newServicesManager( ?ContainerBuilder $containerBuilder = null ) {
 
 		if ( $containerBuilder === null ) {
 			$containerBuilder = $this->newCallbackContainerBuilder();
