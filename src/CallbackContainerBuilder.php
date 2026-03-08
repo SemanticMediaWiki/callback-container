@@ -50,7 +50,7 @@ class CallbackContainerBuilder implements ContainerBuilder {
 	 *
 	 * {@inheritDoc}
 	 */
-	public function __construct( CallbackContainer $callbackContainer = null ) {
+	public function __construct( ?CallbackContainer $callbackContainer = null ) {
 		if ( $callbackContainer !== null ) {
 			$this->registerCallbackContainer( $callbackContainer );
 		}
