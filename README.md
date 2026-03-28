@@ -47,7 +47,7 @@ and `ContainerBuilder`.
 ## Contribution and support
 
 If you want to contribute work to the project please subscribe to the
-developers mailing list and have a look at the [contribution guidelinee](/CONTRIBUTING.md). A list
+developers mailing list and have a look at the [contribution guidelines](/CONTRIBUTING.md). A list
 of people who have made contributions in the past can be found [here][contributors].
 
 * [File an issue](https://github.com/SemanticMediaWiki/callback-container/issues)
