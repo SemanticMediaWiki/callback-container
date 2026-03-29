@@ -2,6 +2,7 @@
 
 namespace Onoi\CallbackContainer\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Onoi\CallbackContainer\NullContainerBuilder;
 
 /**
@@ -13,7 +14,7 @@ use Onoi\CallbackContainer\NullContainerBuilder;
  *
  * @author mwjames
  */
-class NullContainerBuilderTest extends \PHPUnit_Framework_TestCase {
+class NullContainerBuilderTest extends TestCase {
 
 	public function testCanConstruct() {
 
