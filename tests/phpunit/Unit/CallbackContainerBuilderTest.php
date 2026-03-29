@@ -172,7 +172,7 @@ class CallbackContainerBuilderTest extends TestCase {
 		$instance = new CallbackContainerBuilder();
 		$instance->registerFromFile( __DIR__ . '/../Fixtures/fakeCallbackFromFile.php' );
 
-		$this->setExpectedException( 'Onoi\CallbackContainer\Exception\ServiceCircularReferenceException' );
+		$this->expectException( 'Onoi\CallbackContainer\Exception\ServiceCircularReferenceException' );
 		$instance->create( 'serviceFromFileWithForcedCircularReference' );
 	}
 
@@ -384,7 +384,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\InvalidParameterTypeException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\InvalidParameterTypeException' );
 		$instance->registerAlias( 'Foo', 123 );
 	}
 
@@ -396,7 +396,7 @@ class CallbackContainerBuilderTest extends TestCase {
 			return new \stdClass;
 		} );
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\ServiceAliasAssignmentException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\ServiceAliasAssignmentException' );
 		$instance->registerAlias( 'Foo', 'Foo' );
 	}
 
@@ -410,7 +410,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance->registerAlias( 'Foo', 'Foobar' );
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\ServiceAliasCrossAssignmentException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\ServiceAliasCrossAssignmentException' );
 		$instance->registerAlias( 'Foo2', 'Foobar' );
 	}
 
@@ -420,7 +420,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance->registerAlias( 'Foo', 'Foobar' );
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\ServiceAliasMismatchException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\ServiceAliasMismatchException' );
 		$instance->registerObject( 'Foobar', new \stdClass );
 	}
 
@@ -428,7 +428,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\ServiceNotFoundException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\ServiceNotFoundException' );
 		$instance->create( 'Foo' );
 	}
 
@@ -436,7 +436,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\ServiceNotFoundException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\ServiceNotFoundException' );
 		$instance->singleton( 'Foo' );
 	}
 
@@ -450,7 +450,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance->registerExpectedReturnType( 'Foo', 'Bar' );
 
-		$this->setExpectedException( 'RuntimeException' );
+		$this->expectException( 'RuntimeException' );
 		$instance->create( 'Foo' );
 	}
 
@@ -458,7 +458,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'InvalidArgumentException' );
+		$this->expectException( 'InvalidArgumentException' );
 		$instance->create( new \stdClass );
 	}
 
@@ -466,7 +466,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'InvalidArgumentException' );
+		$this->expectException( 'InvalidArgumentException' );
 		$instance->singleton( new \stdClass );
 	}
 
@@ -474,7 +474,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'RuntimeException' );
+		$this->expectException( 'RuntimeException' );
 
 		$instance->registerCallback( 'Foo', function() use ( $instance ) {
 			return $instance->create( 'Foo' );
@@ -488,7 +488,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'RuntimeException' );
+		$this->expectException( 'RuntimeException' );
 
 		$instance->registerCallback( 'Foo', function() use ( $instance ) {
 			return $instance->singleton( 'Foo' );
@@ -501,7 +501,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'InvalidArgumentException' );
+		$this->expectException( 'InvalidArgumentException' );
 		$instance->registerCallback( new \stdClass, function() {
 			return new \stdClass;
 		} );
@@ -511,7 +511,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'InvalidArgumentException' );
+		$this->expectException( 'InvalidArgumentException' );
 		$instance->registerObject( new \stdClass, new \stdClass );
 	}
 
@@ -519,7 +519,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'InvalidArgumentException' );
+		$this->expectException( 'InvalidArgumentException' );
 		$instance->registerExpectedReturnType( new \stdClass, 'Bar' );
 	}
 
@@ -527,7 +527,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'RuntimeException' );
+		$this->expectException( 'RuntimeException' );
 		$instance->registerFromFile( 'Foo' );
 	}
 
