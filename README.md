@@ -61,26 +61,26 @@ The library provides unit tests that covers the core-functionality normally run 
 
 ## Release notes
 
-- 3.0.0 (TBD)
- - Adds support for php 8.1-8.4
- - Requires PHP 8.1+
- - Under new composer namespace mediawiki/callback-container
+### 3.0.0 (TBD)
+* Adds support for php 8.1-8.4
+* Requires PHP 8.1+
+* Under new composer namespace mediawiki/callback-container
 
-- 2.0.0 (2017-02-18)
- - Requires PHP 5.5+
- - Added `CallbackContainerFactory`
- - Added `CallbackContainerBuilder::registerAlias`
- - Added `CallbackContainerBuilder::registerFromFile` to allow loading callback
-   definitions from a file
+### 2.0.0 (2017-02-18)
+* Requires PHP 5.5+
+* Added `CallbackContainerFactory`
+* Added `CallbackContainerBuilder::registerAlias`
+* Added `CallbackContainerBuilder::registerFromFile` to allow loading callback
+  definitions from a file
 
-- 1.1.0 (2016-04-30)
- - Fixed issue in `registeredObject` for when a singleton override contained a `null` argument
- - Deprecated the `CallbackLoader` interface in favour of the `CallbackInstantiator` interface
- - Deprecated the `NullCallbackLoader` class in favour of the `NullCallbackInstantiator` class
+### 1.1.0 (2016-04-30)
+* Fixed issue in `registeredObject` for when a singleton override contained a `null` argument
+* Deprecated the `CallbackLoader` interface in favour of the `CallbackInstantiator` interface
+* Deprecated the `NullCallbackLoader` class in favour of the `NullCallbackInstantiator` class
 
-- 1.0.0 (2015-09-08)
- - Added the `CallbackContainer` and `CallbackLoader` interface
- - Added the `DeferredCallbackLoader` and `NullCallbackLoader` implementation
+### 1.0.0 (2015-09-08)
+* Added the `CallbackContainer` and `CallbackLoader` interface
+* Added the `DeferredCallbackLoader` and `NullCallbackLoader` implementation
 
 ## License
 
