@@ -7,16 +7,16 @@ namespace Onoi\CallbackContainer\Tests;
  *
  * Expected registration form:
  *
- * return array(
+ * return [
  * 	'SomeService' => function( $containerBuilder ) { ... }
- * )
+ * ]
  *
  * @license GNU GPL v2+
  * @since 2.0
  *
  * @author mwjames
  */
-return array(
+return [
 
 	/**
 	 * @return Closure
@@ -60,4 +60,4 @@ return array(
 	 * @return string
 	 */
 	'InvalidDefinition' => 'Foo'
-);
+];

@@ -2,6 +2,7 @@
 
 namespace Onoi\CallbackContainer\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Onoi\CallbackContainer\ServicesManager;
 use Onoi\CallbackContainer\CallbackContainerFactory;
 
@@ -14,11 +15,11 @@ use Onoi\CallbackContainer\CallbackContainerFactory;
  *
  * @author mwjames
  */
-class ServicesManagerTest extends \PHPUnit_Framework_TestCase {
+class ServicesManagerTest extends TestCase {
 
 	private $servicesManager;
 
-	protected function setUp() {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$callbackContainerFactory = new CallbackContainerFactory();
@@ -111,7 +112,7 @@ class ServicesManagerTest extends \PHPUnit_Framework_TestCase {
 
 		$instance->replace( 'Foo', 123 );
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\ServiceTypeMismatchException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\ServiceTypeMismatchException' );
 		$instance->get( 'Foo' );
 	}
 
@@ -119,7 +120,7 @@ class ServicesManagerTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = $this->servicesManager;
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\ServiceNotFoundException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\ServiceNotFoundException' );
 		$instance->get( 'Foo' );
 	}
 

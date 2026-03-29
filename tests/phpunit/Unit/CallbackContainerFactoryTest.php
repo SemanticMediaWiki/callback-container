@@ -2,6 +2,7 @@
 
 namespace Onoi\CallbackContainer\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Onoi\CallbackContainer\CallbackContainerFactory;
 
 /**
@@ -13,7 +14,7 @@ use Onoi\CallbackContainer\CallbackContainerFactory;
  *
  * @author mwjames
  */
-class CallbackContainerFactoryTest extends \PHPUnit_Framework_TestCase {
+class CallbackContainerFactoryTest extends TestCase {
 
 	public function testCanConstruct() {
 

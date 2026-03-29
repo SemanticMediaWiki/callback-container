@@ -2,6 +2,7 @@
 
 namespace Onoi\CallbackContainer\Tests\Exception;
 
+use PHPUnit\Framework\TestCase;
 use Onoi\CallbackContainer\Exception\ServiceTypeMismatchException;
 
 /**
@@ -13,7 +14,7 @@ use Onoi\CallbackContainer\Exception\ServiceTypeMismatchException;
  *
  * @author mwjames
  */
-class ServiceTypeMismatchExceptionTest extends \PHPUnit_Framework_TestCase {
+class ServiceTypeMismatchExceptionTest extends TestCase {
 
 	public function testCanConstruct() {
 

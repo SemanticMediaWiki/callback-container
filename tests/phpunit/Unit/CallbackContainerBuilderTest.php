@@ -2,6 +2,7 @@
 
 namespace Onoi\CallbackContainer\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Onoi\CallbackContainer\CallbackContainerBuilder;
 use Onoi\CallbackContainer\Fixtures\FakeCallbackContainer;
 
@@ -14,7 +15,7 @@ use Onoi\CallbackContainer\Fixtures\FakeCallbackContainer;
  *
  * @author mwjames
  */
-class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
+class CallbackContainerBuilderTest extends TestCase {
 
 	public function testCanConstruct() {
 
@@ -171,7 +172,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 		$instance = new CallbackContainerBuilder();
 		$instance->registerFromFile( __DIR__ . '/../Fixtures/fakeCallbackFromFile.php' );
 
-		$this->setExpectedException( 'Onoi\CallbackContainer\Exception\ServiceCircularReferenceException' );
+		$this->expectException( 'Onoi\CallbackContainer\Exception\ServiceCircularReferenceException' );
 		$instance->create( 'serviceFromFileWithForcedCircularReference' );
 	}
 
@@ -285,7 +286,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$instance->registerCallback( 'Foo', function( $containerBuilder, $a, $b = null, $c ) {
+		$instance->registerCallback( 'Foo', function( $containerBuilder, $a, $b = null, $c = null ) {
 			$stdClass = new \stdClass;
 			$stdClass->a = $a;
 			$stdClass->c = $c;
@@ -383,7 +384,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\InvalidParameterTypeException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\InvalidParameterTypeException' );
 		$instance->registerAlias( 'Foo', 123 );
 	}
 
@@ -395,7 +396,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 			return new \stdClass;
 		} );
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\ServiceAliasAssignmentException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\ServiceAliasAssignmentException' );
 		$instance->registerAlias( 'Foo', 'Foo' );
 	}
 
@@ -409,7 +410,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance->registerAlias( 'Foo', 'Foobar' );
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\ServiceAliasCrossAssignmentException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\ServiceAliasCrossAssignmentException' );
 		$instance->registerAlias( 'Foo2', 'Foobar' );
 	}
 
@@ -419,7 +420,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance->registerAlias( 'Foo', 'Foobar' );
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\ServiceAliasMismatchException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\ServiceAliasMismatchException' );
 		$instance->registerObject( 'Foobar', new \stdClass );
 	}
 
@@ -427,7 +428,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\ServiceNotFoundException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\ServiceNotFoundException' );
 		$instance->create( 'Foo' );
 	}
 
@@ -435,7 +436,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( '\Onoi\CallbackContainer\Exception\ServiceNotFoundException' );
+		$this->expectException( '\Onoi\CallbackContainer\Exception\ServiceNotFoundException' );
 		$instance->singleton( 'Foo' );
 	}
 
@@ -449,7 +450,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance->registerExpectedReturnType( 'Foo', 'Bar' );
 
-		$this->setExpectedException( 'RuntimeException' );
+		$this->expectException( 'RuntimeException' );
 		$instance->create( 'Foo' );
 	}
 
@@ -457,7 +458,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'InvalidArgumentException' );
+		$this->expectException( 'InvalidArgumentException' );
 		$instance->create( new \stdClass );
 	}
 
@@ -465,7 +466,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'InvalidArgumentException' );
+		$this->expectException( 'InvalidArgumentException' );
 		$instance->singleton( new \stdClass );
 	}
 
@@ -473,7 +474,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'RuntimeException' );
+		$this->expectException( 'RuntimeException' );
 
 		$instance->registerCallback( 'Foo', function() use ( $instance ) {
 			return $instance->create( 'Foo' );
@@ -487,7 +488,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'RuntimeException' );
+		$this->expectException( 'RuntimeException' );
 
 		$instance->registerCallback( 'Foo', function() use ( $instance ) {
 			return $instance->singleton( 'Foo' );
@@ -500,7 +501,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'InvalidArgumentException' );
+		$this->expectException( 'InvalidArgumentException' );
 		$instance->registerCallback( new \stdClass, function() {
 			return new \stdClass;
 		} );
@@ -510,7 +511,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'InvalidArgumentException' );
+		$this->expectException( 'InvalidArgumentException' );
 		$instance->registerObject( new \stdClass, new \stdClass );
 	}
 
@@ -518,7 +519,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'InvalidArgumentException' );
+		$this->expectException( 'InvalidArgumentException' );
 		$instance->registerExpectedReturnType( new \stdClass, 'Bar' );
 	}
 
@@ -526,7 +527,7 @@ class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$this->setExpectedException( 'RuntimeException' );
+		$this->expectException( 'RuntimeException' );
 		$instance->registerFromFile( 'Foo' );
 	}
 

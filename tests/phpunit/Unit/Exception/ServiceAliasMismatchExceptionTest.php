@@ -2,6 +2,7 @@
 
 namespace Onoi\CallbackContainer\Tests\Exception;
 
+use PHPUnit\Framework\TestCase;
 use Onoi\CallbackContainer\Exception\ServiceAliasMismatchException;
 
 /**
@@ -13,7 +14,7 @@ use Onoi\CallbackContainer\Exception\ServiceAliasMismatchException;
  *
  * @author mwjames
  */
-class ServiceAliasMismatchExceptionTest extends \PHPUnit_Framework_TestCase {
+class ServiceAliasMismatchExceptionTest extends TestCase {
 
 	public function testCanConstruct() {
 
