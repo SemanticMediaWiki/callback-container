@@ -2,6 +2,7 @@
 
 namespace Onoi\CallbackContainer\Tests\Exception;
 
+use PHPUnit\Framework\TestCase;
 use Onoi\CallbackContainer\Exception\ServiceCircularReferenceException;
 
 /**
@@ -13,7 +14,7 @@ use Onoi\CallbackContainer\Exception\ServiceCircularReferenceException;
  *
  * @author mwjames
  */
-class ServiceCircularReferenceExceptionTest extends \PHPUnit_Framework_TestCase {
+class ServiceCircularReferenceExceptionTest extends TestCase {
 
 	public function testCanConstruct() {
 
