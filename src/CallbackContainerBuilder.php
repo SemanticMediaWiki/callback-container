@@ -72,7 +72,7 @@ class CallbackContainerBuilder implements ContainerBuilder {
 	 */
 	public function registerFromFile( $file ) {
 
-		$file = str_replace( [ '\\', '/' ], DIRECTORY_SEPARATOR, $file )
+		$file = str_replace( [ '\\', '/' ], DIRECTORY_SEPARATOR, $file );
 		if ( !is_readable( $file ) ) {
 			throw new FileNotFoundException( "Cannot access or read {$file}" );
 		}
