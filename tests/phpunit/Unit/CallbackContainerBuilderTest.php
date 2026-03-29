@@ -2,6 +2,7 @@
 
 namespace Onoi\CallbackContainer\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Onoi\CallbackContainer\CallbackContainerBuilder;
 use Onoi\CallbackContainer\Fixtures\FakeCallbackContainer;
 
@@ -14,7 +15,7 @@ use Onoi\CallbackContainer\Fixtures\FakeCallbackContainer;
  *
  * @author mwjames
  */
-class CallbackContainerBuilderTest extends \PHPUnit_Framework_TestCase {
+class CallbackContainerBuilderTest extends TestCase {
 
 	public function testCanConstruct() {
 
