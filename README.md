@@ -61,6 +61,11 @@ The library provides unit tests that covers the core-functionality normally run 
 
 ## Release notes
 
+- 3.0.0 (TBD)
+ - Adds support for php 8.1-8.4
+ - Requires PHP 8.1+
+ - Under new composer namespace mediawiki/callback-container
+
 - 2.0.0 (2017-02-18)
  - Requires PHP 5.5+
  - Added `CallbackContainerFactory`
