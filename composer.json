@@ -27,6 +27,11 @@
 			"Onoi\\CallbackContainer\\": "src/"
 		}
 	},
+	"autoload-dev": {
+		"psr-4": {
+			"Onoi\\CallbackContainer\\Tests\\": "tests/phpunit/Unit"
+		}
+	},
 	"config": {
 		"process-timeout": 0
 	},
