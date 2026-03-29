@@ -2,6 +2,7 @@
 
 namespace Onoi\CallbackContainer\Tests\Exception;
 
+use PHPUnit\Framework\TestCase;
 use Onoi\CallbackContainer\Exception\ServiceAliasAssignmentException;
 
 /**
@@ -13,7 +14,7 @@ use Onoi\CallbackContainer\Exception\ServiceAliasAssignmentException;
  *
  * @author mwjames
  */
-class ServiceAliasAssignmentExceptionTest extends \PHPUnit_Framework_TestCase {
+class ServiceAliasAssignmentExceptionTest extends TestCase {
 
 	public function testCanConstruct() {
 
