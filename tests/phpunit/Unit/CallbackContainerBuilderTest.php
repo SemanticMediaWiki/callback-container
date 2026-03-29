@@ -286,7 +286,7 @@ class CallbackContainerBuilderTest extends TestCase {
 
 		$instance = new CallbackContainerBuilder();
 
-		$instance->registerCallback( 'Foo', function( $containerBuilder, $a, $b = null, $c ) {
+		$instance->registerCallback( 'Foo', function( $containerBuilder, $a, $b = null, $c = null ) {
 			$stdClass = new \stdClass;
 			$stdClass->a = $a;
 			$stdClass->c = $c;
