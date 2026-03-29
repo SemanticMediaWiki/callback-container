@@ -79,7 +79,7 @@ class ServicesManager {
 		$parameters = func_get_args();
 		array_unshift( $parameters, $serviceName );
 
-		return call_user_func_array( array( $this->containerBuilder, 'create' ), $parameters );
+		return call_user_func_array( [ $this->containerBuilder, 'create' ], $parameters );
 	}
 
 	/**

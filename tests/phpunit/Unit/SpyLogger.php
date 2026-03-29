@@ -17,15 +17,15 @@ class SpyLogger extends AbstractLogger {
 	/**
 	 * @var array
 	 */
-	private $logs = array();
+	private $logs = [];
 
 	/**
 	 * @since 2.0
 	 *
 	 * {@inheritDoc}
 	 */
-	public function log( $level, $message, array $context = array() ) {
-		$this->logs[] = array( $level, $message, $context );
+	public function log( $level, $message, array $context = [] ) {
+		$this->logs[] = [ $level, $message, $context ];
 	}
 
 	/**

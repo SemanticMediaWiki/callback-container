@@ -23,27 +23,27 @@ class CallbackContainerBuilder implements ContainerBuilder {
 	/**
 	 * @var array
 	 */
-	protected $registry = array();
+	protected $registry = [];
 
 	/**
 	 * @var array
 	 */
-	protected $singletons = array();
+	protected $singletons = [];
 
 	/**
 	 * @var array
 	 */
-	protected $expectedReturnTypeByHandler = array();
+	protected $expectedReturnTypeByHandler = [];
 
 	/**
 	 * @var array
 	 */
-	protected $aliases = array();
+	protected $aliases = [];
 
 	/**
 	 * @var array
 	 */
-	protected $recursiveMarker = array();
+	protected $recursiveMarker = [];
 
 	/**
 	 * @since 2.0
@@ -72,7 +72,8 @@ class CallbackContainerBuilder implements ContainerBuilder {
 	 */
 	public function registerFromFile( $file ) {
 
-		if ( !is_readable( ( $file = str_replace( array( '\\', '/' ), DIRECTORY_SEPARATOR, $file ) ) ) ) {
+		$file = str_replace( [ '\\', '/' ], DIRECTORY_SEPARATOR, $file );
+		if ( !is_readable( $file ) ) {
 			throw new FileNotFoundException( "Cannot access or read {$file}" );
 		}
 
@@ -270,7 +271,7 @@ class CallbackContainerBuilder implements ContainerBuilder {
 	private function getReturnValueFromSingletonFor( $serviceName, $parameters ) {
 
 		$instance = null;
-		$fingerprint = $parameters !== array() ? md5( json_encode( $parameters ) ) : '#';
+		$fingerprint = $parameters !== [] ? md5( json_encode( $parameters ) ) : '#';
 
 		$this->addRecursiveMarkerFor( $serviceName );
 

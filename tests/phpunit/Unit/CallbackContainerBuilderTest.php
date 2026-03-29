@@ -344,13 +344,13 @@ class CallbackContainerBuilderTest extends TestCase {
 		$instance->registerExpectedReturnType( 'Foo', '\stdClass' );
 
 		$this->assertSame(
-			$instance->singleton( 'Foo', 'abc', array( 'def' ) ),
-			$instance->singleton( 'Foo', 'abc', array( 'def' ) )
+			$instance->singleton( 'Foo', 'abc', [ 'def' ] ),
+			$instance->singleton( 'Foo', 'abc', [ 'def' ] )
 		);
 
 		$this->assertNotSame(
-			$instance->singleton( 'Foo', 'abc', array( '123' ) ),
-			$instance->singleton( 'Foo', 'abc', array( 'def' ) )
+			$instance->singleton( 'Foo', 'abc', [ '123' ] ),
+			$instance->singleton( 'Foo', 'abc', [ 'def' ] )
 		);
 	}
 
