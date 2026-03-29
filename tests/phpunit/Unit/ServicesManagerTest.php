@@ -2,6 +2,7 @@
 
 namespace Onoi\CallbackContainer\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Onoi\CallbackContainer\ServicesManager;
 use Onoi\CallbackContainer\CallbackContainerFactory;
 
@@ -14,7 +15,7 @@ use Onoi\CallbackContainer\CallbackContainerFactory;
  *
  * @author mwjames
  */
-class ServicesManagerTest extends \PHPUnit_Framework_TestCase {
+class ServicesManagerTest extends TestCase {
 
 	private $servicesManager;
 
