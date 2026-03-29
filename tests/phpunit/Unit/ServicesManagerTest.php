@@ -19,7 +19,7 @@ class ServicesManagerTest extends TestCase {
 
 	private $servicesManager;
 
-	protected function setUp() {
+	protected function setUp(): void {
 		parent::setUp();
 
 		$callbackContainerFactory = new CallbackContainerFactory();
